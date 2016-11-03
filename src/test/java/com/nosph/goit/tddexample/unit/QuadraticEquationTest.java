@@ -4,7 +4,7 @@ import static com.nosph.goit.tddexample.QuadraticEquationImpl.create;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,7 +30,7 @@ public class QuadraticEquationTest {
 	public void hasNoSolutions() {
 		QuadraticEquationResult result = create(5, 3, 7).solve();
 		
-		assertTrue(result.hasSolution());
+		assertFalse(result.hasSolution());
 	}
 	
 	/**
@@ -87,6 +87,7 @@ public class QuadraticEquationTest {
 	@Test(expected = IllegalStateException.class)
 	public void hasNoSolutionsAndInvokeGetSolutions() {
 		QuadraticEquationResult result = create(5, 3, 7).solve();
+		assertFalse(result.hasSolution());
 		List<Double> solutions = result.getSolutions();
 	}
 }
