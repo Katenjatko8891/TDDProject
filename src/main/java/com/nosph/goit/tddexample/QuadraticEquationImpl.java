@@ -12,6 +12,14 @@ import com.nosph.goit.tddexample.contract.QuadraticEquationResult;
  *******************************************************************************/
 public class QuadraticEquationImpl implements QuadraticEquation {
 
+	public static QuadraticEquationImpl create(double a, double b, double c){
+		return new QuadraticEquationImpl(a, b ,c);
+	}
+	
+	private QuadraticEquationImpl(double a, double b, double c) {
+		throw new UnsupportedOperationException();
+	}
+
 	@Override
 	public QuadraticEquationResult solve() {
 		throw new UnsupportedOperationException();
